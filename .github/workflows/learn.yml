@@ -6,31 +6,17 @@ on:
     branches:
       - master
 
-env:
-  FOOD: nutella
-
 jobs:
-  selector:
+  build:
     runs-on: ubuntu-latest
-
+    strategy:
+      matrix:
+        food:
+          - pizza
+          - beer
+          - ice cream
+          - salad
     steps:
-    - name: Select thing
-      run: |
-        echo "Foo"
-
-  primary:
-    runs-on: ubuntu-latest
-    needs: selector
-
-    steps:
-    - name: Select thing
-      run: |
-        echo "Foo"
-
-  last:
-    runs-on: ubuntu-latest
-    needs: [selector, primary]
-    steps:
-    - name: Select thing
-      run: |
-        echo "Foo"
+      - name: Select thing
+        run: |
+          echo "$${ matrix.food }"
