@@ -17,15 +17,10 @@ jobs:
           - beer
           - ice cream
     steps:
-      - name: Output Value
+      - name: First way
+        run: echo $${ matrix.food }
+
+      - name: Second way
         env:
           NAME: $${ matrix.food }
-        run: |
-          echo "I am a little teapot short and stout" > "$NAME.txt"
-      - name: Archive files
-        env:
-          NAME: $${ matrix.food }
-        uses: actions/upload-artifact@v2
-        with:
-          name: file-$${ matrix.food }
-          path: "$NAME.txt"
+        run: echo $NAME
