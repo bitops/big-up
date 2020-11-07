@@ -1,0 +1,36 @@
+
+name: Learning
+
+on:
+  push:
+    branches:
+      - master
+
+env:
+  FOOD: nutella
+
+jobs:
+  selector:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Select thing
+      run: |
+        echo "Foo"
+
+  primary:
+    runs-on: ubuntu-latest
+    needs: selector
+
+    steps:
+    - name: Select thing
+      run: |
+        echo "Foo"
+
+  last:
+    runs-on: ubuntu-latest
+    needs: [selector, primary]
+    steps:
+    - name: Select thing
+      run: |
+        echo "Foo"
