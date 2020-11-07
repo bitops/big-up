@@ -9,15 +9,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
         food: [ "pizza", "beer" ]
     steps:
       - name: First way
         run: echo $${ matrix.food }
-
-      - name: Second way
-        env:
-          NAME: $${ matrix.food }
-        run: echo $NAME
