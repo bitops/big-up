@@ -21,11 +21,11 @@ jobs:
         env:
           NAME: $${ matrix.food }
         run: |
-          echo I am a little teapot short and stout > $NAME.txt
+          echo "I am a little teapot short and stout" > "$NAME.txt"
       - name: Archive files
         env:
           NAME: $${ matrix.food }
         uses: actions/upload-artifact@v2
         with:
           name: file-$${ matrix.food }
-          path: $NAME.txt
+          path: "$NAME.txt"
