@@ -12,10 +12,7 @@ jobs:
 
     strategy:
       matrix:
-        food:
-          - pizza
-          - beer
-          - ice cream
+        food: [ "pizza", "beer" ]
     steps:
       - name: First way
         run: echo $${ matrix.food }
