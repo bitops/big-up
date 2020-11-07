@@ -19,4 +19,4 @@ jobs:
     steps:
       - name: Output Value
         run: |
-          echo $${ matrix.food }
+          echo I am a little teapot $${ matrix.food } and stout
