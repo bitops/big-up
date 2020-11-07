@@ -9,6 +9,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     strategy:
       matrix:
         food:
@@ -18,6 +19,13 @@ jobs:
     steps:
       - name: Output Value
         env:
-          NAME: $${matrix.food}
+          NAME: $${ matrix.food }
         run: |
-          echo I am a little teapot $NAME and stout
+          echo I am a little teapot short and stout > $NAME.txt
+      - name: Archive files
+        env:
+          NAME: $${ matrix.food }
+        uses: actions/upload-artifact@v2
+        with:
+          name: file-$${ matrix.food }
+          path: $NAME.txt
