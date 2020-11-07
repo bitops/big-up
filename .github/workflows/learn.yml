@@ -17,6 +17,6 @@ jobs:
           - ice cream
           - salad
     steps:
-      - name: Select thing
+      - name: Output Value
         run: |
-          echo "$${ matrix.food }"
+          echo $${ matrix.food }
