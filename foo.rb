@@ -1,1 +1,1 @@
-puts "Hooray"
+puts "It works"
