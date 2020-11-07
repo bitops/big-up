@@ -15,8 +15,9 @@ jobs:
           - pizza
           - beer
           - ice cream
-          - salad
     steps:
       - name: Output Value
+        env:
+          NAME: $${matrix.food}
         run: |
-          echo I am a little teapot $${ matrix.food } and stout
+          echo I am a little teapot $NAME and stout
