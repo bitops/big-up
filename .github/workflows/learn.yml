@@ -20,6 +20,8 @@ jobs:
         git config user.email "commit-trigger-bot@example.com"
         git config user.name "Commit Trigger Bot"
 
+        sleep 30
+
         git commit --allow-empty -m "trigger action at $(date +%s)"
         git push origin trigger
 
