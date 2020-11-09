@@ -1,5 +1,5 @@
 
-name: Learning
+name: Scheduled Job with Matrix Strategy
 
 on:
   schedule:
