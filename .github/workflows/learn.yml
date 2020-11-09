@@ -4,7 +4,7 @@ name: Learning
 on:
   push:
     branches:
-      - master
+      - trigger
 
 jobs:
   build:
