@@ -2,27 +2,11 @@
 name: Learning
 
 on:
-  push:
-    branches:
-      - trigger
-  # schedule every 7 minutes
+  schedule:
+    # please run every 15 minutes, Mon - Fri
+    - cron: '*/15 * * * 1-5'
 
 jobs:
-  trigger-commit:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout branch
-      uses: actions/checkout@v2
-      with:
-        ref: trigger
-    - name: Perform action
-      run: |
-        git config user.email "commit-trigger-bot@example.com"
-        git config user.name "Commit Trigger Bot"
-
-        git commit --allow-empty -m "trigger action at $(date +%s)"
-        git push origin trigger
-
   build:
     runs-on: ubuntu-latest
     strategy:
