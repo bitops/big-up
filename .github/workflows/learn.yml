@@ -21,7 +21,7 @@ jobs:
         git config user.name "Commit Trigger Bot"
 
         git commit --allow-empty -m "trigger action at $(date +%s)"
-        git push origin trigger
+        nohup "sleep 15 && git push origin trigger" &
 
   build:
     runs-on: ubuntu-latest
