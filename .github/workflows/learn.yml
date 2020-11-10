@@ -20,4 +20,4 @@ jobs:
         with:
           ref: ${{ matrix.branch }}
       - name: Do the thing
-        run: cat foo.rb
+        run: ./foo.sh
